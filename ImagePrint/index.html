@@ -86,15 +86,15 @@
         .row {
             margin-bottom: 13px;
         }
-        p{
+
+        p {
             font-weight: bold;
         }
+
         #picBox {
             display: none;
         }
     </style>
-
-
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
 </head>
@@ -243,21 +243,31 @@
                 <p id="30p" class="data"></p>
             </div>
         </div>
+        <div class="row">
+            <footer id="foot" class="" style="margin-top: 10px;" class="link-primary">Developed by <a
+                    href="https://instagram.com/utkarshencoder" target="_blank"
+                    style="font-weight: bold; font-size: large;">👩‍💻Utkarsh Sharma</a></footer>
+        </div>
     </div>
 
     <!-- ! Imagees that show after all data is entered -->
     <main class="form-signin" id="main">
         <form>
             <img id="proImg" class="mb-4" src="img.png" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Enter Image Count</h1>
+            <div class="row">
+                <p class="col" style="text-align: left; max-width: 175px; margin: 0px;">Paste your image or </p>
+                <input oninput="proImg.src=window.URL.createObjectURL(this.files[0])"type="file" id="photo" class="col" style="text-align: left; padding: 0px; margin-right: 10px; width: 60%;">
 
+            </div>
             <div class="form-floating">
-                <input type="number" class="form-control" value="5" id="count" placeholder="10" onclick="this.select()" autofocus>
+                <input type="number" class="form-control" value="5" id="count" placeholder="10" onclick="this.select()"
+                    autofocus>
                 <label for="count">How many images you want</label>
             </div>
             <div class="checkbox mb-3">
                 <label>
                     <input id="cbox" type="checkbox" value="remember-me" onclick="showDN()" autofocus> Add Name & Date
+                    to your image
                 </label>
             </div>
             <div id="nameDateBox">
@@ -271,14 +281,12 @@
                 </div>
             </div>
         </form>
-        <button class="w-100 btn btn-lg btn-primary" style="margin-top: 5px;" onkeypress="handle(event)" onclick="gen()">Generate</button>
+        <button class="w-100 btn btn-lg btn-primary" style="margin-top: 5px;" onkeypress="handle(event)"
+            onclick="gen()">Generate</button>
+        <footer style="margin-top: 10px;" class="link-primary">Developed by <a
+                href="https://instagram.com/utkarshencoder" target="_blank"
+                style="font-weight: bold; font-size: large;">👩‍💻Utkarsh Sharma</a></footer>
     </main>
-
-    <script>
-        $(document).ready(function () {
-            $('#date').keyup(function () { alert('test'); });
-        });
-    </script>
     <script src="js.js"></script>
 </body>
 
