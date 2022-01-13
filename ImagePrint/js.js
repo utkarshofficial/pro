@@ -60,7 +60,9 @@ function backMenu() {
 // ! Print
 function pri() {
     document.getElementById("options").style.display = "none";
+    document.getElementById("foot").style.display = "none";
     window.print();
+    document.getElementById("foot").style.display = "block";
     document.getElementById("options").style.display = "flex";
 }
 
