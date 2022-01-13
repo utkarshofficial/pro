@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const item = items[0];
         imageData = item.getAsFile();
         document.getElementById("proImg").src = URL.createObjectURL(imageData);
+        document.getElementById("proImg").style.boxShadow = "";
     });
 });
 // ----------------------
@@ -38,18 +39,26 @@ function showDN() {
 function change() {
     var imgs = document.querySelectorAll("img");
     imgs.forEach(function (img) {
-        img.setAttribute('src', URL.createObjectURL(imageData));
+        img.setAttribute('src', document.getElementById("proImg").src);
     });
 }
 
+// ! showing the file choose by button
+photo.onchange = evt => {
+    const [file] = imgInp.files
+    if (file) {
+      document.getElementById("proImg").src = URL.createObjectURL(file)
+    }
+  }
+
 // ! back to menu function
-function backMenu(){
+function backMenu() {
     document.getElementById("main").style.display = "inline";
     document.getElementById("picBox").style.display = "none";
 }
 
 // ! Print
-function pri(){
+function pri() {
     document.getElementById("options").style.display = "none";
     window.print();
     document.getElementById("options").style.display = "flex";
@@ -61,17 +70,19 @@ function gen() {
     var srcName = document.getElementById("proImg").src;
     var oldName = "img.png";
     var s = "";
-    for(let i = srcName.length-1;i>=0;i--){
-        if(srcName[i]=='/'){
+    for (let i = srcName.length - 1; i >= 0; i--) {
+        if (srcName[i] == '/') {
             break;
         }
         s = srcName[i] + s;
     }
-    if(s == oldName){
+    if (s == oldName) {
+        // document.getElementById("proImg").style.border = "2px solid red"
+        document.getElementById("proImg").style.boxShadow = "0 4px 8px 0 rgba(255, 0, 0, 0.8), 0 6px 20px 0 rgba(255, 0, 0, 0.8)";
         return;
     }
     var imgCount = document.getElementById("count").value;
-    if(imgCount==""){
+    if (imgCount == "") {
         return;
     }
     // first hide all the page content
@@ -87,10 +98,10 @@ function gen() {
         date = document.getElementById("date").value;
         // select all p and change their value
         var d = document.getElementsByClassName("data");
-        for(let i=0;i<d.length;i++){
+        for (let i = 0; i < d.length; i++) {
             d[i].innerHTML = name + "<br>" + date;
         }
-        
+
     } else {
 
     }
@@ -107,8 +118,8 @@ function gen() {
 }
 
 // ! Handle Enter key press
-function handle(e){
-    if(e.key === 13){
+function handle(e) {
+    if (e.key === 13) {
         gen();
     }
 }
