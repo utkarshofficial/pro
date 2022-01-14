@@ -9,7 +9,7 @@ body {
 }
 
 .form-signin {
-  width: 400px;
+  width: 100%;
   max-width: 400px;
   padding: 15px;
   margin: auto;
@@ -38,4 +38,18 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+@page{
+  margin-top: 0.25in;
+  margin-bottom: 0.25in;
+  margin-right: 0.25in;
+  margin-left: 0.25in;
+}
+
+
+#picBox{
+  min-width: 300px;
+}
+
+
 
