@@ -71,8 +71,10 @@ function pri() {
 // * for checking range of input
 function checkRange(value, min, max) 
 {
-    
-    if(parseInt(value) > max) 
+    if(parseInt(value) < min){
+        return "";
+    }
+    else if(parseInt(value) > max) 
         return max; 
     else return value;
 }
