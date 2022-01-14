@@ -47,9 +47,9 @@ function change() {
 photo.onchange = evt => {
     const [file] = imgInp.files
     if (file) {
-      document.getElementById("proImg").src = URL.createObjectURL(file)
+        document.getElementById("proImg").src = URL.createObjectURL(file)
     }
-  }
+}
 
 // ! back to menu function
 function backMenu() {
@@ -60,14 +60,26 @@ function backMenu() {
 // ! Print
 function pri() {
     document.getElementById("options").style.display = "none";
+    document.getElementById("realPicBox").style.padding = "0";
+    document.getElementById("realPicBox").style.marginLeft = "0";
     document.getElementById("foot").style.display = "none";
     window.print();
     document.getElementById("foot").style.display = "block";
     document.getElementById("options").style.display = "flex";
 }
 
+// * for checking range of input
+function checkRange(value, min, max) 
+{
+    
+    if(parseInt(value) > max) 
+        return max; 
+    else return value;
+}
+
 // * Generate Function
 function gen() {
+    const maxImg = 42;
     // for checking image is pasted or not
     var srcName = document.getElementById("proImg").src;
     var oldName = "img.png";
@@ -84,9 +96,6 @@ function gen() {
         return;
     }
     var imgCount = document.getElementById("count").value;
-    if (imgCount == "") {
-        return;
-    }
     // first hide all the page content
     document.getElementById("main").style.display = "none";
     document.getElementById("picBox").style.display = "block";
@@ -98,6 +107,9 @@ function gen() {
     if (showDN()) {
         name = document.getElementById("name").value;
         date = document.getElementById("date").value;
+        if(name=="" || date==""){
+            
+        }
         // select all p and change their value
         var d = document.getElementsByClassName("data");
         for (let i = 0; i < d.length; i++) {
@@ -107,21 +119,14 @@ function gen() {
     } else {
 
     }
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= maxImg; i++) {
         document.getElementById(i + "i").style.display = "none";
     }
     for (let i = 1; i <= imgCount; i++) {
-        if (i > 30) {
+        if (i > maxImg) {
             break;
         }
         document.getElementById(i + "i").style.display = "inline";
     }
 
-}
-
-// ! Handle Enter key press
-function handle(e) {
-    if (e.key === 13) {
-        gen();
-    }
 }
