@@ -1,0 +1,97 @@
+body {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 700px;
+    padding: 15px;
+    margin: auto;
+}
+
+#inp {
+    font-weight: bold;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+@page {
+    margin-top: 0.25in;
+    margin-bottom: 0.25in;
+    margin-right: 0.25in;
+    margin-left: 0.25in;
+}
+
+.imgSize {
+    height: 2.1in;
+    width: 3.3in;
+    border: 1px solid black;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+img {
+    height: 2.1in;
+    width: 3.3in;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #printSection,
+    #printSection * {
+        visibility: visible;
+    }
+    .form-signin {
+        padding: 0;
+    }
+}
+
+.bColorG {
+    background: rgb(0, 119, 0)!important;
+}
+
+.bColorR {
+    background: rgb(138, 0, 0)!important;
+}
+
+#printSection {
+    display: flex;
+}
+
+.add {
+    margin-top: 10px!important;
+    width: 300px!important;
+    margin-left: 20px;
+    max-width: 100px;
+}
+
+li {
+    list-style-type: none;
+}
+
+@page {
+    margin-top: 0.25in;
+    margin-left: 0.81in;
+}
+
+#marginTime {
+    margin-right: 0px;
+}
+
+.checkbox {
+    margin-top: 20px;
+}
+
+#round {
+    font-size: 15pt;
+}
