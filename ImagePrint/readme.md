@@ -14,8 +14,8 @@
 <br>
 
 <p>Some Screenshots</p>
-> ![Home](https://user-images.githubusercontent.com/83834666/150067051-0b67af68-7344-4ef0-91ff-2861dab2f25d.png)
-> ![Example](https://user-images.githubusercontent.com/83834666/150067689-73a1777f-1817-4992-a9d3-d191c9ebaacd.png)
-> ![Now Simply you can print it](https://user-images.githubusercontent.com/83834666/150067727-f136f1c1-08da-4eae-87bb-5d1d812a2894.png)
+![Home](https://user-images.githubusercontent.com/83834666/150067051-0b67af68-7344-4ef0-91ff-2861dab2f25d.png)
+![Example](https://user-images.githubusercontent.com/83834666/150067689-73a1777f-1817-4992-a9d3-d191c9ebaacd.png)
+![Now Simply you can print it](https://user-images.githubusercontent.com/83834666/150067727-f136f1c1-08da-4eae-87bb-5d1d812a2894.png)
 
 
