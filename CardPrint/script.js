@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (first === 0) {
             document.getElementById("frontImg").src = URL.createObjectURL(imageData);
             first = 1;
+            document.getElementById("backImg").src = "back.png"; // for removing olg image after one successful print
         } else if (first === 1) {
             document.getElementById("backImg").src = URL.createObjectURL(imageData);
             first = 0
