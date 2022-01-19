@@ -14,10 +14,9 @@
 <br>
 
 <p>Some Screenshots</p>
+
 ![Home](s1.png)
-
 ![Example](s2.png)
-
 ![Now Simply you can print it](s3.png)
 
 
