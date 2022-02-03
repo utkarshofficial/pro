@@ -5,10 +5,10 @@ var imageData;
 
 
 // ---------------------- for image paste
-document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('paste', function (evt) {
+document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('paste', function(evt) {
         const clipboardItems = evt.clipboardData.items;
-        const items = [].slice.call(clipboardItems).filter(function (item) {
+        const items = [].slice.call(clipboardItems).filter(function(item) {
             // Filter the image items only
             return item.type.indexOf('image') !== -1;
         });
@@ -26,11 +26,21 @@ document.addEventListener('DOMContentLoaded', function () {
 // checkbox checking function
 function showDN() {
     const cb = document.getElementById("cbox");
+    var dataBox = document.getElementById("dataBox");
+    var liveName = document.getElementById("liveName");
+    var liveDate = document.getElementById("liveDate");
     if (cb.checked) {
         nameBox.style.display = "inline";
+        liveName.style.visibility = "visible";
+        liveDate.style.visibility = "visible";
+        dataBox.classList.add("liveData");
         return true;
     } else {
         nameBox.style.display = "none";
+        liveName.style.visibility = "hidden";
+        liveDate.style.visibility = "hidden";
+        dataBox.classList.remove("liveData");
+
         return false;
     }
 }
@@ -38,7 +48,7 @@ function showDN() {
 // changes the all images data
 function change() {
     var imgs = document.querySelectorAll("img");
-    imgs.forEach(function (img) {
+    imgs.forEach(function(img) {
         img.setAttribute('src', document.getElementById("proImg").src);
     });
 }
@@ -69,14 +79,29 @@ function pri() {
 }
 
 // * for checking range of input
-function checkRange(value, min, max) 
-{
-    if(parseInt(value) < min){
+function checkRange(value, min, max) {
+    if (parseInt(value) < min) {
         return "";
-    }
-    else if(parseInt(value) > max) 
-        return max; 
+    } else if (parseInt(value) > max)
+        return max;
     else return value;
+}
+
+// * For Live Name and Date Showing
+function liveNDShow(currentWork, data) {
+    liveName = document.getElementById('liveName');
+    liveDate = document.getElementById('liveDate');
+    if (currentWork === 1) {
+        liveName.innerHTML = data;
+    }
+    if (currentWork === 2) {
+        liveDate.innerHTML = data;
+    }
+    if (currentWork === 3) {
+        liveName.style.fontSize = data + "pt";
+        liveDate.style.fontSize = data + "pt";
+    }
+
 }
 
 // * Generate Function
@@ -109,13 +134,14 @@ function gen() {
     if (showDN()) {
         name = document.getElementById("name").value;
         date = document.getElementById("date").value;
-        if(name=="" || date==""){
-            
+        if (name == "" || date == "") {
+
         }
         // select all p and change their value
         var d = document.getElementsByClassName("data");
         for (let i = 0; i < d.length; i++) {
             d[i].innerHTML = name + "<br>" + date;
+            d[i].style.fontSize = document.getElementById("fSize").value + "pt";
         }
 
     } else {
