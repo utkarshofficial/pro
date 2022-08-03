@@ -4,13 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <meta
-      name="author"
-      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
-    />
-    <meta name="generator" content="Hugo 0.88.1" />
     <title>Image Printer</title>
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -83,22 +77,62 @@
       .rightMargin {
         margin-right: 13px;
       }
-
-      .container {
+      /* who shows all images */
+      .image-container {
         height: fit-content;
         width: 8.3in;
+        padding: 0px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
       }
 
       .row {
         margin-bottom: 13px;
+        width: 8.3in !important;
+        display: flex;
+        justify-content: left;
       }
-
+      .row > * {
+        padding-left: 0;
+      }
       p {
         font-weight: bold;
       }
 
       #picBox {
         display: none;
+        margin: auto;
+      }
+      footer {
+        background-color: black;
+        color: white !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      #options {
+        position: fixed;
+        top: 0.2in;
+        left: 0.2in;
+        width: 220px;
+        height: 85px;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      label {
+        color: #ffeb3b;
+      }
+      body {
+        background-color: #212529 !important;
+        color: #ffeb3b;
+      }
+      input {
+        background-color: #212529 !important;
+        color: white !important;
+        font-weight: bolder !important;
       }
     </style>
     <!-- Custom styles for this template -->
@@ -107,8 +141,8 @@
 
   <body class="text-center">
     <!-- ! Imagees that show after all data is entered -->
-    <div class="container" id="picBox">
-      <div class="container" id="realPicBox">
+    <div id="picBox">
+      <div class="image-container" id="realPicBox">
         <div class="row">
           <div id="1i" class="imgBox rightMargin">
             <img src="#" alt="" />
@@ -292,37 +326,11 @@
           </div>
         </div>
       </div>
-      <div id="options" class="row" style="margin-top: 10px; text-align: left">
-        <div class="col" style="text-align: left">
-          <button
-            class="btn btn-primary"
-            onclick="backMenu()"
-            style="width: 80%"
-          >
-            Back to Menu
-          </button>
-        </div>
-        <div class="col" style="text-align: left">
-          <button class="btn btn-primary" onclick="pri()" style="width: 80%">
-            Print
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <footer
-          id="foot"
-          class=""
-          style="margin-top: 10px"
-          class="link-primary"
-        >
-          Developed by
-          <a
-            href="https://instagram.com/utkarshencoder"
-            target="_blank"
-            style="font-weight: bold; font-size: large"
-            >👩‍💻Utkarsh Sharma</a
-          >
-        </footer>
+      <div id="options">
+        <button class="btn btn-primary" onclick="backMenu()">
+          Back to Menu
+        </button>
+        <button class="btn btn-primary" onclick="pri()">Print</button>
       </div>
     </div>
 
@@ -434,25 +442,24 @@
             <label for="fSize">Font Size</label>
           </div>
         </div>
-      </form>
-      <button
-        class="w-100 btn btn-lg btn-primary"
-        style="margin-top: 5px"
-        onkeypress="handle(event)"
-        onclick="gen()"
-      >
-        Generate
-      </button>
-      <footer style="margin-top: 10px" class="link-primary">
-        Developed by
-        <a
-          href="https://instagram.com/utkarshencoder"
-          target="_blank"
-          style="font-weight: bold; font-size: large"
-          >👩‍💻Utkarsh Sharma</a
+        <button
+          class="w-100 btn btn-lg btn-primary"
+          style="margin-top: 5px"
+          onclick="gen(event)"
         >
-      </footer>
+          Generate
+        </button>
+      </form>
     </main>
+    <footer style="margin-top: 10px" class="link-primary">
+      Developed by
+      <a
+        href="https://instagram.com/utkarshencoder"
+        target="_blank"
+        style="font-weight: bold; font-size: large"
+        >👩‍💻Utkarsh Sharma</a
+      >
+    </footer>
 
     <script src="js.js"></script>
   </body>

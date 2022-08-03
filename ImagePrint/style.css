@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#detialsInput {
+    display: flex;
+    justify-content: center;
+}
+
+/* from index.html */
+img {
+    height: 1.5in;
+    width: 1.25in;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.imgBox {
+    margin-top: 0px;
+    position: relative;
+    height: 1.5in;
+    width: 1.25in;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.title-image {
+    /* position: absolute; */
+    width: 100% !important;
+    display: flex;
+    justify-content: cente
+}
+
+.image {
+    display: block;
+    height: 1.5in;
+    width: 1.25in;
+}
+
+.data {
+    position: absolute;
+    bottom: 0;
+    background: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #f1f1f1;
+    width: 1.23in;
+    margin-left: 1px;
+    line-height: 11pt;
+    margin-bottom: 1px;
+    border-bottom-left-radius: 9.2px;
+    border-bottom-right-radius: 9.2px;
+    transition: .5s ease;
+    opacity: 0;
+    color: black;
+    font-size: 10pt;
+    padding: 0px;
+    text-align: center;
+    opacity: 1;
+}
+
+p {
+    margin: 0 !important;
+}
+
+.liveData {
+    position: absolute;
+    bottom: 0;
+    background: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #f1f1f1;
+    width: 1.23in;
+    margin-left: 1px;
+    line-height: 11pt;
+    margin-bottom: 1px;
+    border-bottom-left-radius: 9.2px;
+    border-bottom-right-radius: 9.2px;
+    color: black;
+    font-size: 10pt;
+    padding: 0px;
+    text-align: center;
+    opacity: 1;
+}
+
+.image-box {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+/* Container holding the image and the text */
+.containerc {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    bottom: 0;
+}

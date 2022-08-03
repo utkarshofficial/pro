@@ -69,10 +69,12 @@ body {
     body * {
         visibility: hidden;
     }
+
     #realPicBox,
     #realPicBox * {
         visibility: visible;
     }
+
     .form-signin {
         padding: 0;
     }
