@@ -114,8 +114,8 @@ function liveNDShow(currentWork, data) {
 }
 
 // * Generate Function
-function gen(event) {
-  event.preventDefault();
+document.getElementById("submitImage").addEventListener("click", (e) => {
+  e.preventDefault();
   const maxImg = 42;
   // for checking image is pasted or not
   var srcName = document.getElementById("proImg").src;
@@ -173,4 +173,4 @@ function gen(event) {
     }
     document.getElementById(i + "i").style.display = "inline";
   }
-}
+});
