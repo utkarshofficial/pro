@@ -1,6 +1,7 @@
 var nameBox = document.getElementById("nameDateBox");
 nameBox.style.display = "none";
 var imageData;
+const currentScreenWidth = window.innerWidth;
 
 // ---------------------- for image paste
 document.addEventListener("DOMContentLoaded", function () {
@@ -32,7 +33,11 @@ function showDN() {
     liveName.style.visibility = "visible";
     liveDate.style.visibility = "visible";
     dataBox.classList.add("liveData");
-    dataBox.style.lineHeight = fSize.value * 3 * 0.9 + "pt";
+    if (currentScreenWidth > 705)
+      dataBox.style.lineHeight = fSize.value * 3 * 0.9 + "pt";
+    else {
+      dataBox.style.lineHeight = fSize.value * 0.9 + "pt";
+    }
     let count = document.getElementById("count").value;
     for (let i = 1; i <= count; i++) {
       document.getElementById(i + "p").style.display = "block";
@@ -107,9 +112,15 @@ function liveNDShow(currentWork, data) {
       fSize.value = 15;
       data = 15;
     }
-    liveName.style.fontSize = data * 3 + "pt";
-    liveDate.style.fontSize = data * 3 + "pt";
-    dataBox.style.lineHeight = data * 3 * 0.9 + "pt";
+    if (currentScreenWidth > 705) {
+      liveName.style.fontSize = data * 3 + "pt";
+      liveDate.style.fontSize = data * 3 + "pt";
+      dataBox.style.lineHeight = data * 3 * 0.9 + "pt";
+    } else {
+      liveDate.style.fontSize = data + "pt";
+      liveName.style.fontSize = data + "pt";
+      dataBox.style.lineHeight = data * 0.9 + "pt";
+    }
   }
 }
 
