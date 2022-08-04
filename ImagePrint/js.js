@@ -32,6 +32,7 @@ function showDN() {
     liveName.style.visibility = "visible";
     liveDate.style.visibility = "visible";
     dataBox.classList.add("liveData");
+    dataBox.style.lineHeight = fSize.value * 3 * 0.9 + "pt";
     let count = document.getElementById("count").value;
     for (let i = 1; i <= count; i++) {
       document.getElementById(i + "p").style.display = "block";
@@ -97,21 +98,18 @@ function liveNDShow(currentWork, data) {
   if (currentWork === 1) {
     liveName.innerHTML = data;
     liveNameStore = data;
-    dataBox.style.height = data === "" ? "0" : "45px";
   }
   if (currentWork === 2) {
     liveDate.innerHTML = data;
-    if (data === "" && liveNameStore === "") {
-      dataBox.style.height = "0px";
-    } else if (data === "" && liveNameStore !== "") {
-      dataBox.style.height = "45px";
-    } else {
-      dataBox.style.height = "90px";
-    }
   }
   if (currentWork === 3) {
+    if (data > 15) {
+      fSize.value = 15;
+      data = 15;
+    }
     liveName.style.fontSize = data * 3 + "pt";
     liveDate.style.fontSize = data * 3 + "pt";
+    dataBox.style.lineHeight = data * 3 * 0.9 + "pt";
   }
 }
 
@@ -161,6 +159,8 @@ function gen(event) {
     for (let i = 0; i < d.length; i++) {
       d[i].innerHTML = name + "<br>" + date;
       d[i].style.fontSize = document.getElementById("fSize").value + "pt";
+      d[i].style.lineHeight =
+        document.getElementById("fSize").value * 0.9 + "pt";
     }
   } else {
   }
