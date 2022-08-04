@@ -175,12 +175,14 @@ document.getElementById("submitImage").addEventListener("click", (e) => {
     if (name == "" || date == "") {
     }
     // select all p and change their value
-    var d = document.getElementsByClassName("data");
-    for (let i = 0; i < d.length; i++) {
-      d[i].innerHTML = name + "<br>" + date;
-      d[i].style.fontSize = document.getElementById("fSize").value + "pt";
-      d[i].style.lineHeight =
-        document.getElementById("fSize").value * 0.9 + "pt";
+    if (name !== "" && date !== "") {
+      var d = document.getElementsByClassName("data");
+      for (let i = 0; i < d.length; i++) {
+        d[i].innerHTML = name + "<br>" + date;
+        d[i].style.fontSize = document.getElementById("fSize").value + "pt";
+        d[i].style.lineHeight =
+          document.getElementById("fSize").value * 0.9 + "pt";
+      }
     }
   } else {
   }
