@@ -32,12 +32,20 @@ function showDN() {
     liveName.style.visibility = "visible";
     liveDate.style.visibility = "visible";
     dataBox.classList.add("liveData");
+    let count = document.getElementById("count").value;
+    for (let i = 1; i <= count; i++) {
+      document.getElementById(i + "p").style.display = "block";
+    }
     return true;
   } else {
     nameBox.style.display = "none";
     liveName.style.visibility = "hidden";
     liveDate.style.visibility = "hidden";
     dataBox.classList.remove("liveData");
+    let count = document.getElementById("count").value;
+    for (let i = 1; i <= count; i++) {
+      document.getElementById(i + "p").style.display = "none";
+    }
 
     return false;
   }
@@ -81,20 +89,29 @@ function checkRange(value, min, max) {
   } else if (parseInt(value) > max) return max;
   else return value;
 }
-
+var liveNameStore, liveDataStore;
 // * For Live Name and Date Showing
 function liveNDShow(currentWork, data) {
   liveName = document.getElementById("liveName");
   liveDate = document.getElementById("liveDate");
   if (currentWork === 1) {
     liveName.innerHTML = data;
+    liveNameStore = data;
+    dataBox.style.height = data === "" ? "0" : "45px";
   }
   if (currentWork === 2) {
     liveDate.innerHTML = data;
+    if (data === "" && liveNameStore === "") {
+      dataBox.style.height = "0px";
+    } else if (data === "" && liveNameStore !== "") {
+      dataBox.style.height = "45px";
+    } else {
+      dataBox.style.height = "90px";
+    }
   }
   if (currentWork === 3) {
-    liveName.style.fontSize = data + "pt";
-    liveDate.style.fontSize = data + "pt";
+    liveName.style.fontSize = data * 3 + "pt";
+    liveDate.style.fontSize = data * 3 + "pt";
   }
 }
 

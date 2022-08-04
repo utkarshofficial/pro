@@ -61,7 +61,7 @@
         color: #f1f1f1;
         width: 1.23in;
         margin-left: 1px;
-        line-height: 11pt;
+        line-height: 10pt;
         margin-bottom: 1px;
         border-bottom-left-radius: 9.2px;
         border-bottom-right-radius: 9.2px;
@@ -112,6 +112,7 @@
         bottom: 0;
         left: 0;
         right: 0;
+        height: 40px;
       }
       #options {
         position: fixed;
@@ -335,120 +336,167 @@
     </div>
 
     <!-- ! Imagees that show after all data is entered -->
-    <main class="form-signin" id="main">
-      <form>
+    <main
+      class="form-signin"
+      id="main"
+      style="
+        display: inline;
+        width: 98%; /* padding: 15px; */
+        margin-top: 40px !important;
+        max-width: 870px !important;
+      "
+    >
+      <form style="display: flex; justify-content: center">
         <!-- <img id="proImg" class="mb-4" src="img.png" alt="" width="72" height="57"> -->
         <div
-          id=""
-          class="proImg imgBox"
-          width="72"
-          height="57"
-          style="margin-left: 34%; margin-bottom: 20px"
+          class="big-show"
+          style="
+            position: relative;
+            width: 3.75in;
+            /* border: 2px solid; */
+            height: 4.5in;
+            margin-right: 50px;
+          "
         >
-          <div>
-            <img id="proImg" src="img.png" alt="" />
-            <div id="dataBox" class="liveData">
-              <p id="liveName" style="margin: 0"></p>
-              <p id="liveDate" style="margin: 0"></p>
+          <img
+            id="proImg"
+            src="./img.png"
+            alt=""
+            style="height: inherit; width: inherit; border: 1px solid gold"
+          />
+          <div
+            id="dataBox"
+            class="liveData"
+            style="
+              /* position: absolute; */
+              top: 20;
+              font-size: 30pt;
+              width: 3.75in;
+              left: 0;
+              height: 0;
+            "
+          >
+            <p
+              id="liveName"
+              style="
+                margin: 0px;
+                height: 45px;
+                visibility: hidden;
+                display: flex;
+                place-content: center;
+                flex-wrap: wrap;
+                font-size: 30pt;
+              "
+            ></p>
+            <p
+              id="liveDate"
+              style="
+                margin: 0px;
+                visibility: hidden;
+                height: 45px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                font-size: 30pt;
+              "
+            ></p>
+          </div>
+        </div>
+        <div
+          class="input-taking"
+          style="
+            width: 350px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          "
+        >
+          <div class="input-group mb-3">
+            <input
+              class="form-control"
+              required="true"
+              oninput="proImg.src=window.URL.createObjectURL(this.files[0])"
+              type="file"
+              accept="image/*"
+              id="photo"
+            />
+          </div>
+          <div class="form-floating">
+            <input
+              required=""
+              min="1"
+              max="42"
+              maxlength="2"
+              minlength="1"
+              type="number"
+              class="form-control"
+              value="5"
+              id="count"
+              placeholder="10"
+              onkeyup="this.value = checkRange(this.value, 1, 42)"
+              onclick="this.select()"
+              autofocus=""
+            />
+            <label for="count">How many images you want between(1 - 42)</label>
+          </div>
+          <div class="checkbox mb-2">
+            <label>
+              <input
+                id="cbox"
+                type="checkbox"
+                value="remember-me"
+                onclick="showDN()"
+                autofocus=""
+              />
+              Add Name &amp; Date to your image
+            </label>
+          </div>
+          <div id="nameDateBox" style="display: none">
+            <div class="form-floating mb-1">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Ram Kumar"
+                autofocus=""
+                onkeyup="liveNDShow(1,this.value)"
+              />
+              <label for="name">Enter Name</label>
+            </div>
+            <div class="form-floating mb-1">
+              <input
+                type="text"
+                class="form-control"
+                id="date"
+                placeholder="12-10-2002"
+                autofocus=""
+                onkeyup="liveNDShow(2,this.value)"
+              />
+              <label for="date">Enter Date</label>
+            </div>
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="fSize"
+                placeholder="10"
+                autofocus=""
+                onclick="this.select()"
+                value="10"
+                onkeyup="liveNDShow(3,this.value)"
+              />
+              <label for="fSize">Font Size</label>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <p
-            class="col"
-            style="text-align: left; max-width: 175px; margin: 0px"
+          <button
+            class="w-100 btn btn-lg btn-primary"
+            style="margin-top: 5px"
+            onclick="gen(event)"
           >
-            Paste your image or
-          </p>
-          <input
-            required
-            oninput="proImg.src=window.URL.createObjectURL(this.files[0])"
-            type="file"
-            accept="image/*"
-            id="photo"
-            class="col"
-            style="
-              text-align: left;
-              padding: 0px;
-              margin-right: 10px;
-              width: 60%;
-            "
-          />
+            Generate
+          </button>
         </div>
-        <div class="form-floating">
-          <input
-            required
-            min="1"
-            max="42"
-            maxlength="2"
-            minlength="1"
-            type="number"
-            class="form-control"
-            value="5"
-            id="count"
-            placeholder="10"
-            onkeyup="this.value = checkRange(this.value, 1, 42)"
-            onclick="this.select()"
-            autofocus
-          />
-          <label for="count">How many images you want between(1 - 42)</label>
-        </div>
-        <div class="checkbox mb-3">
-          <label>
-            <input
-              id="cbox"
-              type="checkbox"
-              value="remember-me"
-              onclick="showDN()"
-              autofocus
-            />
-            Add Name & Date to your image
-          </label>
-        </div>
-        <div id="nameDateBox">
-          <div class="form-floating">
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="Ram Kumar"
-              autofocus
-              onkeyup="liveNDShow(1,this.value)"
-            />
-            <label for="name">Enter Name</label>
-          </div>
-          <div class="form-floating">
-            <input
-              type="text"
-              class="form-control"
-              id="date"
-              placeholder="12-10-2002"
-              autofocus
-              onkeyup="liveNDShow(2,this.value)"
-            />
-            <label for="date">Enter Date</label>
-          </div>
-          <div class="form-floating">
-            <input
-              type="text"
-              class="form-control"
-              id="fSize"
-              placeholder="10"
-              autofocus
-              onclick="this.select()"
-              value="10"
-              onkeyup="liveNDShow(3,this.value)"
-            />
-            <label for="fSize">Font Size</label>
-          </div>
-        </div>
-        <button
-          class="w-100 btn btn-lg btn-primary"
-          style="margin-top: 5px"
-          onclick="gen(event)"
-        >
-          Generate
-        </button>
       </form>
     </main>
     <footer style="margin-top: 10px" class="link-primary">
