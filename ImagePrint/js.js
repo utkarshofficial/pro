@@ -33,9 +33,13 @@ function showDN() {
     liveName.style.visibility = "visible";
     liveDate.style.visibility = "visible";
     dataBox.classList.add("liveData");
-    if (currentScreenWidth > 705)
+    if (currentScreenWidth > 705) {
       dataBox.style.lineHeight = fSize.value * 3 * 0.9 + "pt";
-    else {
+      liveName.style.fontSize = fSize.value * 3 + "pt";
+      liveDate.style.fontSize = fSize.value * 3 + "pt";
+    } else {
+      liveName.style.fontSize = fSize.value + "pt";
+      liveDate.style.fontSize = fSize.value + "pt";
       dataBox.style.lineHeight = fSize.value * 0.9 + "pt";
     }
     let count = document.getElementById("count").value;
@@ -75,6 +79,7 @@ photo.onchange = (evt) => {
 
 // ! back to menu function
 function backMenu() {
+  document.body.style.zoom = 1.0;
   document.getElementById("main").style.display = "inline";
   document.getElementById("picBox").style.display = "none";
 }
@@ -144,8 +149,12 @@ document.getElementById("submitImage").addEventListener("click", (e) => {
       "0 4px 8px 0 rgba(255, 0, 0, 0.8), 0 6px 20px 0 rgba(255, 0, 0, 0.8)";
     return;
   }
+  // for mobile user to zoom out the screen of generated photos
+  if (currentScreenWidth < 705) {
+    document.body.style.zoom = 0.45;
+  }
   // if image added then remove red shadow
-  document.getElementById("proImg").style.boxShadow = "";
+  document.getElementById("proImg").style.boxShadow = "none";
 
   var imgCount = document.getElementById("count").value;
   if (imgCount === "") {
