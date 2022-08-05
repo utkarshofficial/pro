@@ -1,7 +1,7 @@
 var nameBox = document.getElementById("nameDateBox");
 nameBox.style.display = "none";
 var imageData;
-const currentScreenWidth = window.innerWidth;
+var currentScreenWidth = window.innerWidth;
 
 // ---------------------- for image paste
 document.addEventListener("DOMContentLoaded", function () {
@@ -79,6 +79,9 @@ photo.onchange = (evt) => {
 
 // ! back to menu function
 function backMenu() {
+  if (currentScreenWidth < 705) {
+    document.body.style.marginBottom = "50px";
+  }
   document.body.style.zoom = 1.0;
   document.getElementById("main").style.display = "inline";
   document.getElementById("picBox").style.display = "none";
@@ -132,6 +135,7 @@ function liveNDShow(currentWork, data) {
 // * Generate Function
 document.getElementById("submitImage").addEventListener("click", (e) => {
   e.preventDefault();
+  currentScreenWidth = window.innerWidth;
   const maxImg = 42;
   // for checking image is pasted or not
   var srcName = document.getElementById("proImg").src;
@@ -151,7 +155,8 @@ document.getElementById("submitImage").addEventListener("click", (e) => {
   }
   // for mobile user to zoom out the screen of generated photos
   if (currentScreenWidth < 705) {
-    document.body.style.zoom = 0.45;
+    document.body.style.zoom = currentScreenWidth * 0.00125;
+    document.body.style.marginBottom = "135px";
   }
   // if image added then remove red shadow
   document.getElementById("proImg").style.boxShadow = "none";
