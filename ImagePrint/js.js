@@ -80,7 +80,7 @@ photo.onchange = (evt) => {
 // ! back to menu function
 function backMenu() {
   if (currentScreenWidth < 705) {
-    document.body.style.marginBottom = "50px";
+    document.body.style.marginBottom = "45px";
   }
   document.body.style.zoom = 1.0;
   document.getElementById("main").style.display = "inline";
