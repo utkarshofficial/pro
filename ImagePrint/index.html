@@ -194,9 +194,15 @@
         top: 0.2in;
         left: 0.2in;
         width: 220px;
-        height: 85px;
+        height: 110px;
         flex-direction: column;
         justify-content: space-between;
+      }
+      .btn-primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18pt;
       }
       label {
         color: #ffeb3b;
@@ -280,8 +286,22 @@
           width: 49%;
           font-size: 30pt;
         }
+        .material-symbols-outlined {
+          font-size: larger !important;
+        }
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
   </head>
 
   <body class="text-center">
@@ -473,9 +493,12 @@
       </div>
       <div id="options">
         <button class="btn btn-primary" onclick="backMenu()">
-          Back to Menu
+          <span class="material-symbols-outlined me-1"> menu </span>
+          Menu
         </button>
-        <button class="btn btn-primary" onclick="pri()">Print</button>
+        <button class="btn btn-primary btn-success" onclick="pri()">
+          <span class="material-symbols-outlined me-1">print</span>Print
+        </button>
       </div>
     </div>
 
@@ -575,17 +598,23 @@
               <label for="fSize">Font Size</label>
             </div>
           </div>
-          <input
-            value="Generate"
+          <button
             type="submit"
             class="w-100 btn btn-lg"
             style="
               margin-top: 5px;
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
               background-color: #0d6efd !important;
               border-color: #0d6efd;
             "
             id="submitImage"
-          />
+          >
+            Generate
+            <span class="material-symbols-outlined ms-1"> auto_awesome </span>
+          </button>
         </div>
       </form>
     </main>
