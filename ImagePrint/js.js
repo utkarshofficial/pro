@@ -69,14 +69,6 @@ function change() {
   });
 }
 
-// ! showing the file choose by button
-photo.onchange = (evt) => {
-  const [file] = imgInp.files;
-  if (file) {
-    document.getElementById("proImg").src = URL.createObjectURL(file);
-  }
-};
-
 // ! back to menu function
 function backMenu() {
   if (currentScreenWidth < 705) {
