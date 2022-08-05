@@ -84,6 +84,7 @@ function pri() {
   document.getElementById("options").style.display = "none";
   document.getElementById("realPicBox").style.padding = "0";
   document.getElementById("realPicBox").style.marginLeft = "0";
+  document.body.style.marginBottom = "45px";
   window.print();
   document.getElementById("options").style.display = "flex";
 }
