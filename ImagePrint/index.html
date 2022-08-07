@@ -11,6 +11,15 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="edit.css" />
     <style>
       body {
         display: flex;
@@ -21,7 +30,6 @@
 
       .form-signin {
         width: 98%;
-        margin-top: 40px;
         max-width: 870px;
       }
 
@@ -106,7 +114,6 @@
         width: 1.25in;
         border-radius: 10px;
         pointer-events: none !important;
-        border: 1px solid black;
       }
 
       * {
@@ -120,6 +127,9 @@
         width: 1.25in;
         border-radius: 10px;
         opacity: 1;
+        overflow: hidden;
+        pointer-events: none !important;
+        border: 1px solid black;
       }
 
       .image {
@@ -233,7 +243,13 @@
         position: relative;
         width: 3.75in;
         height: 4.5in;
-        margin-right: 50px;
+        background-color: #212529;
+        border-radius: 10px;
+        box-shadow: 10px 10px 18px #101010de;
+        overflow: hidden;
+      }
+      .big-show > img {
+        border: none !important;
       }
       .liveShowing {
         display: flex;
@@ -300,10 +316,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
   </head>
 
   <body class="text-center">
@@ -312,183 +324,183 @@
       <div class="image-container" id="realPicBox">
         <div class="row">
           <div id="1i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="1p" class="data"></p>
           </div>
           <div id="2i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="2p" class="data"></p>
           </div>
           <div id="3i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="3p" class="data"></p>
           </div>
           <div id="4i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="4p" class="data"></p>
           </div>
           <div id="5i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="5p" class="data"></p>
           </div>
           <div id="6i" class="imgBox">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="6p" class="data"></p>
           </div>
         </div>
         <div class="row">
           <div id="7i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="7p" class="data"></p>
           </div>
           <div id="8i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="8p" class="data"></p>
           </div>
           <div id="9i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="9p" class="data"></p>
           </div>
           <div id="10i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="10p" class="data"></p>
           </div>
           <div id="11i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="11p" class="data"></p>
           </div>
           <div id="12i" class="imgBox">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="12p" class="data"></p>
           </div>
         </div>
         <div class="row">
           <div id="13i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="13p" class="data"></p>
           </div>
           <div id="14i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="14p" class="data"></p>
           </div>
           <div id="15i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="15p" class="data"></p>
           </div>
           <div id="16i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="16p" class="data"></p>
           </div>
           <div id="17i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="17p" class="data"></p>
           </div>
           <div id="18i" class="imgBox">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="18p" class="data"></p>
           </div>
         </div>
         <div class="row">
           <div id="19i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="19p" class="data"></p>
           </div>
           <div id="20i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="20p" class="data"></p>
           </div>
           <div id="21i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="21p" class="data"></p>
           </div>
           <div id="22i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="22p" class="data"></p>
           </div>
           <div id="23i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="23p" class="data"></p>
           </div>
           <div id="24i" class="imgBox">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="24p" class="data"></p>
           </div>
         </div>
         <div class="row">
           <div id="25i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="25p" class="data"></p>
           </div>
           <div id="26i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="26p" class="data"></p>
           </div>
           <div id="27i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="27p" class="data"></p>
           </div>
           <div id="28i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="28p" class="data"></p>
           </div>
           <div id="29i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="29p" class="data"></p>
           </div>
           <div id="30i" class="imgBox">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="30p" class="data"></p>
           </div>
         </div>
         <div class="row">
           <div id="31i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="31p" class="data"></p>
           </div>
           <div id="32i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="32p" class="data"></p>
           </div>
           <div id="33i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="33p" class="data"></p>
           </div>
           <div id="34i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="34p" class="data"></p>
           </div>
           <div id="35i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="35p" class="data"></p>
           </div>
           <div id="36i" class="imgBox">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="36p" class="data"></p>
           </div>
         </div>
         <div class="row">
           <div id="37i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="37p" class="data"></p>
           </div>
           <div id="38i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="38p" class="data"></p>
           </div>
           <div id="39i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="39p" class="data"></p>
           </div>
           <div id="40i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="40p" class="data"></p>
           </div>
           <div id="41i" class="imgBox rightMargin">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="41p" class="data"></p>
           </div>
           <div id="42i" class="imgBox">
-            <img src="#" alt="" />
+            <img class="filter" src="#" alt="" />
             <p id="42p" class="data"></p>
           </div>
         </div>
@@ -507,16 +519,75 @@
     <!-- ! Imagees that show after all data is entered -->
     <main class="form-signin" id="main">
       <form style="display: flex; justify-content: center">
-        <div class="big-show">
-          <img
-            id="proImg"
-            src="./img.png"
-            alt=""
-            style="height: inherit; width: inherit; border: 1px solid gold"
-          />
-          <div id="dataBox" class="liveData">
-            <p id="liveName" class="liveShowing"></p>
-            <p id="liveDate" class="liveShowing"></p>
+        <div class="edit">
+          <div class="big-show">
+            <img
+              class="filter"
+              id="proImg"
+              src="./img.png"
+              alt=""
+              style="height: inherit; width: inherit; border: 1px solid gold"
+            />
+            <div id="dataBox" class="liveData">
+              <p id="liveName" class="liveShowing"></p>
+              <p id="liveDate" class="liveShowing"></p>
+            </div>
+          </div>
+          <div class="edit-input">
+            <div>
+              <span id="edit-title"> Brightness </span>
+              <span id="edit-value">100%</span>
+            </div>
+            <input min="0" max="200" type="range" id="edit-range" />
+          </div>
+          <div class="edit-option">
+            <ul class="edit-options">
+              <li id="start" class="active">
+                <i class="fa-solid fa-sun"></i>
+                <span>Brightness</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>Contrast</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-droplet"></i>
+                <span>Saturation</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-border-none"></i>
+                <span>Grayscale</span>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  style="fill: rgb(255, 255, 255)"
+                >
+                  <path
+                    d="M6 21h12l-6-6-6 6zM18 3H6l6 6 6-6zM3 11h3v2H3zM8 11h3v2H8zM13 11h3v2h-3zM18 11h3v2h-3z"
+                  ></path>
+                </svg>
+                <span>Flip H</span>
+              </li>
+              <li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  style="fill: white"
+                >
+                  <path
+                    d="m3 18 6-6-6-6v12zM15 12l6 6V6l-6 6zM11 3h2v3h-2zM11 8h2v3h-2zM11 13h2v3h-2zM11 18h2v3h-2z"
+                  ></path></svg
+                ><span>Flip V</span>
+              </li>
+              <li>
+                <i class="fa-solid fa-rotate-right"></i> <span>Rotate</span>
+              </li>
+              <li><i class="fa-solid fa-eraser"></i><span>Reset</span></li>
+            </ul>
           </div>
         </div>
         <div class="input-taking">
@@ -628,7 +699,7 @@
         >👩‍💻Utkarsh Sharma</a
       >
     </footer>
-
+    <script src="edit.js"></script>
     <script src="js.js"></script>
   </body>
 </html>

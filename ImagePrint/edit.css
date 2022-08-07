@@ -1,0 +1,76 @@
+.hide {
+    display: none !important;
+}
+
+.edit {
+    margin-top: 20px;
+    height: 5.5in;
+    width: 6.1in;
+    padding: 5px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #00bcd4;
+    display: grid;
+    grid-template-areas:
+        "image  options"
+        "slider slider"
+    ;
+}
+
+.big-show {
+    grid-area: image;
+}
+
+.edit-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 100%;
+    font-size: 16pt;
+    font-weight: bold;
+    grid-area: slider;
+    background-color: hsl(210, 11%, 15%);
+    border-radius: 10px;
+}
+
+.edit-input>input {
+    width: 80%;
+    cursor: pointer;
+}
+
+.edit-options {
+    display: grid;
+    grid-template-rows: repeat(8, auto);
+    height: 4.5in;
+    color: white;
+    grid-area: options;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.edit-options>li {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #212529;
+}
+
+.edit-options>li:hover {
+    /* background-color: rgb(57, 0, 126); */
+    background-color: #212529c2;
+}
+
+.edit-options>li>svg,
+i {
+    margin-right: 5px !important;
+}
+
+.active {
+    background-color: rgb(13 110 253) !important;
+}
