@@ -74,3 +74,36 @@ i {
 .active {
     background-color: rgb(13 110 253) !important;
 }
+
+@media only screen and (max-width: 705px) {
+    .edit {
+        width: 98%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        grid-template-areas:
+            "image"
+            "slider"
+            "optinos"
+        ;
+        height: auto;
+    }
+
+    .edit-input {
+        height: 70px;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+
+    .edit-options {
+        grid-template-rows: repeat(8, auto);
+        grid-template-columns: repeat(2, auto);
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+    }
+
+    .edit-options>li {
+        font-size: 11pt;
+    }
+}

@@ -135,8 +135,8 @@ edit.slider.addEventListener("input", () => {
 const applyFilter = () => {
   edit.image.forEach((img) => {
     img.style.filter = `brightness(${i.brightness}%) contrast(${i.contrast}%) saturate(${i.saturate}%) grayscale(${i.grayscale}%)`;
-    img.style.rotate = `${i.rotateAngle}deg`;
-    img.style.transform = `scale(${i.scaleX}, ${i.scaleY})`;
+    // img.style.rotate = `${i.rotateAngle}deg`;
+    img.style.transform = `rotate(${i.rotateAngle}deg) scale(${i.scaleX}, ${i.scaleY})`;
   });
 };
 
