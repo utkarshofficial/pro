@@ -104,9 +104,19 @@ function liveNDShow(currentWork, data) {
   if (currentWork === 1) {
     liveName.innerHTML = data;
     liveNameStore = data;
+    if (data.indexOf("g") !== -1) {
+      liveName.style.paddingBottom = "3px";
+    } else {
+      liveName.style.paddingBottom = "0px";
+    }
   }
   if (currentWork === 2) {
     liveDate.innerHTML = data;
+    if (data.indexOf("g") !== -1) {
+      liveDate.style.paddingBottom = "6px";
+    } else {
+      liveDate.style.paddingBottom = "0px";
+    }
   }
   if (currentWork === 3) {
     if (data > 15) {
@@ -170,19 +180,38 @@ document.getElementById("submitImage").addEventListener("click", (e) => {
   if (showDN()) {
     name = document.getElementById("name").value;
     date = document.getElementById("date").value;
-    if (name == "" || date == "") {
-    }
+
     // select all p and change their value
-    if (name !== "" && date !== "") {
-      var d = document.getElementsByClassName("data");
-      for (let i = 0; i < d.length; i++) {
-        d[i].innerHTML = name + "<br>" + date;
-        d[i].style.fontSize = document.getElementById("fSize").value + "pt";
-        d[i].style.lineHeight =
-          document.getElementById("fSize").value * 0.9 + "pt";
+    var d = document.getElementsByClassName("data");
+    for (let i = 0; i < d.length; i++) {
+      let heightLine = 0,
+        fz = document.getElementById("fSize").value;
+      let paddingBottom = "";
+      if (name === "" && date !== "") {
+        d[i].innerHTML = date;
+      } else if (name !== "" && date === "") {
+        d[i].innerHTML = name;
+      } else if (name !== "" && date !== "") {
+        d[i].innerHTML = name + "<br/>" + date;
+      } else {
+        break;
       }
+      if (name.indexOf("g") !== -1 && date.indexOf("g") !== 1) {
+        heightLine = 1;
+        paddingBottom = fz * 0.3 + "px";
+      } else if (name.indexOf("g") !== -1) {
+        heightLine = 1;
+        paddingBottom = "0px";
+      } else if (date.indexOf("g") !== -1) {
+        paddingBottom = fz * 0.3 + "px";
+      } else {
+        heightLine = 0;
+        paddingBottom = "0px";
+      }
+      d[i].style.fontSize = fz + "pt";
+      d[i].style.lineHeight = (heightLine ? Math.abs(fz) + 1 : fz * 0.9) + "pt";
+      d[i].style.paddingBottom = paddingBottom;
     }
-  } else {
   }
   for (let i = 1; i <= maxImg; i++) {
     document.getElementById(i + "i").style.display = "none";
