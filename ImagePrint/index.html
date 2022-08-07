@@ -240,6 +240,7 @@
         justify-content: center;
       }
       .big-show {
+        cursor: pointer;
         position: relative;
         width: 3.75in;
         height: 4.5in;
@@ -589,6 +590,7 @@
         <div class="input-taking">
           <div class="input-group mb-1">
             <input
+              id="imgInput"
               class="form-control"
               required="true"
               oninput="proImg.src=window.URL.createObjectURL(this.files[0])"

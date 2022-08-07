@@ -140,5 +140,15 @@ const applyFilter = () => {
   });
 };
 
+// uploading image by clicking bigImage
+var changed = 0;
+document.querySelector(".big-show").addEventListener("click", () => {
+  if (!changed) {
+    imgInput.click();
+    document.querySelector(".big-show").style.cursor = "unset";
+    changed = 1;
+  }
+});
+
 // simulating click
 document.getElementById("start").click();
