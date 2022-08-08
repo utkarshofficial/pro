@@ -75,12 +75,6 @@ i {
     background-color: rgb(13 110 253) !important;
 }
 
-#proImg {
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-}
-
 @media only screen and (max-width: 705px) {
     .edit {
         width: 98%;
