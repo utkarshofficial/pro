@@ -147,8 +147,26 @@ document.querySelector(".big-show").addEventListener("click", () => {
     imgInput.click();
     document.querySelector(".big-show").style.cursor = "unset";
     changed = 1;
+    imgChanged = 1;
   }
 });
+
+// upload img animation
+const dispImg = document.getElementById("proImg");
+function uploadAnime(mouseevent) {
+  if (
+    dispImg.src.indexOf("asdfghjkl;'mouse.png") !== -1 ||
+    dispImg.src.indexOf("asdfghjkl;'.png") !== -1
+  ) {
+    if (mouseevent === "enter") {
+      dispImg.src = "./asdfghjkl;'mouse.png";
+    } else {
+      dispImg.src = "./asdfghjkl;'.png";
+    }
+  } else {
+    return;
+  }
+}
 
 // simulating click
 document.getElementById("start").click();

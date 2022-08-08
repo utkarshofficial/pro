@@ -98,25 +98,34 @@ function checkRange(value, min, max) {
 }
 var liveNameStore, liveDataStore;
 // * For Live Name and Date Showing
+const charForPadding = ["g", "j", "p", "q", ",", ";"];
 function liveNDShow(currentWork, data) {
   liveName = document.getElementById("liveName");
   liveDate = document.getElementById("liveDate");
   if (currentWork === 1) {
     liveName.innerHTML = data;
     liveNameStore = data;
-    if (data.indexOf("g") !== -1) {
-      liveName.style.paddingBottom = "3px";
-    } else {
-      liveName.style.paddingBottom = "0px";
-    }
+    let avail = 0;
+    charForPadding.forEach((char) => {
+      if (data.indexOf(char) !== -1) {
+        liveName.style.paddingBottom = "3px";
+        avail = 1;
+      } else if (!avail) {
+        liveName.style.paddingBottom = "0px";
+      }
+    });
   }
   if (currentWork === 2) {
     liveDate.innerHTML = data;
-    if (data.indexOf("g") !== -1) {
-      liveDate.style.paddingBottom = "6px";
-    } else {
-      liveDate.style.paddingBottom = "0px";
-    }
+    let avail = 0;
+    charForPadding.forEach((char) => {
+      if (data.indexOf(char) !== -1) {
+        liveDate.style.paddingBottom = "3px";
+        avail = 1;
+      } else if (!avail) {
+        liveDate.style.paddingBottom = "0px";
+      }
+    });
   }
   if (currentWork === 3) {
     if (data > 15) {
