@@ -95,8 +95,8 @@ i {
     }
 
     .edit-options {
-        grid-template-rows: repeat(8, auto);
-        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: repeat(4, auto);
         width: 100%;
         height: auto;
         border-top-left-radius: 0px !important;
@@ -105,5 +105,17 @@ i {
 
     .edit-options>li {
         font-size: 11pt;
+        justify-content: center;
+    }
+
+    .edit-options>li>span {
+        visibility: hidden;
+        display: none;
+    }
+
+    footer {
+        margin-top: 10px;
+        position: relative !important;
+        background-color: transparent !important;
     }
 }

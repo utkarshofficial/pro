@@ -232,3 +232,9 @@ document.getElementById("submitImage").addEventListener("click", (e) => {
     document.getElementById(i + "i").style.display = "inline";
   }
 });
+
+// * adding right tick to checkbox in starting for pc
+if (currentScreenWidth > 705) {
+  cbox.checked = true;
+  showDN();
+}
