@@ -78,7 +78,6 @@ img {
     margin-top: 10px !important;
     width: 300px !important;
     margin-left: 20px;
-    max-width: 100px;
 }
 
 li {
@@ -102,4 +101,44 @@ li {
     font-size: 15pt;
 }
 
+.margin-btns {
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+
+.margin-btns>button {
+    height: min-content;
+}
+
 /* For mobile privew */
+@media only screen and (max-width: 655px) {
+    #printSection {
+        flex-direction: column;
+    }
+
+    .imgSize {
+        margin-bottom: 0;
+    }
+
+    .checkbox {
+        margin-top: 2px;
+    }
+
+    .add {
+        margin-left: 0;
+    }
+
+    .margin-btns {
+        justify-content: space-between;
+        width: 320px;
+    }
+
+    .margin-btns>button {
+        width: 155px !important;
+    }
+
+    .print-btn {
+        width: 300px !important;
+    }
+}
