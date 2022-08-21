@@ -57,6 +57,10 @@ img {
     .form-signin {
         padding: 0;
     }
+
+    .imgSize {
+        border: 1px solid black;
+    }
 }
 
 .bColorG {
